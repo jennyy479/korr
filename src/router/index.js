@@ -3,9 +3,14 @@ import { createRouter, createWebHistory } from 'vue-router';
 // 定義路由對應的組件
 const routes = [
   {
-    path: '/',
+    path: '/index',
     name: 'Home',
     component: () => import('../views/HomeView.vue'), // 動態載入 HomeView
+  },
+  {
+    path: '/questions',
+    name: 'Questions',
+    component: () => import('../views/QuestionsView.vue'),
   },
 ];
 
