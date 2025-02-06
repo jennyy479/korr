@@ -12,6 +12,11 @@ const routes = [
     name: 'Questions',
     component: () => import('../views/QuestionsView.vue'),
   },
+  {
+    path: '/teach',
+    name: 'Teach',
+    component: () => import('../views/TeachView.vue'),
+  },
 ];
 
 // 創建路由實例
