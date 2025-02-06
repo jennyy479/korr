@@ -1,17 +1,17 @@
 <template>
   <header class="header">
     <div class="header__container">
-      <div class="header__logo"><a href="/"><img src="@/assets/images/logo.png"></a></div>
+      <div class="header__logo"><a href="/index"><img src="@/assets/images/logo.png"></a></div>
       <div class="menu">
         <div class="menuContent">
           <div class="hamburger" id="hamburger" @click="toggleMenu"><span class="hamburger__inner"></span></div>
           <ul class="menu__list">
             <li class="menu__item"><a href="/questions">專屬你的彈指天菜</a></li>
             <li class="menu__item"><a href="/index#video">彈指料理搶先看</a></li>
-            <li class="menu__item"><a href="/teach.html">專業的煮給你看</a></li>
-            <li class="menu__item"><a href="/recipelist.html">美味秘笈偷偷看</a></li>
-            <li class="menu__item"><a href="/sales.html">美味販賣部</a></li>
-            <li class="menu__item"><a href="/event.html">活動辦法</a></li>
+            <li class="menu__item"><a href="/teach">專業的煮給你看</a></li>
+            <li class="menu__item"><a href="/recipelist">美味秘笈偷偷看</a></li>
+            <li class="menu__item"><a href="/sales">美味販賣部</a></li>
+            <li class="menu__item"><a href="/event">活動辦法</a></li>
             <li class="menu__item menu__link">
               <ul class="menu__linkList">
                 <li class="menu__linkItem"><a href="#">官網</a></li>
