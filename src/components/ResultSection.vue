@@ -5,8 +5,8 @@
         <div class="result__board">
           <h1 class="result__title"><img src="@/assets/images/result/result_title.png" alt=""></h1>
           <section class="result__content">
-            <div class="result__img"><img class="hidden__phone" src="@/assets/images/result/result_img1-1.jpg" alt=""><img
-                class="visible__phone" src="@/assets/images/result/result_img1-1m.jpg" alt=""></div>
+            <div class="result__img"><img class="hidden__phone" :src="resultImg" alt=""><img
+                class="visible__phone" :src="resultMobileImg" alt=""></div>
             <div class="result__recipebtn"><a href="/recipe1"><img src="@/assets/images/result/result_recipebtn.jpg"
                   alt=""></a></div>
           </section>
@@ -30,7 +30,6 @@
           <div class="moreFood__title"> <img src="@/assets/images/morefood_title.png" alt=""></div>
           <ul class="moreFood__slider" v-for="recipe in recipeList" :key="recipe.index">
             <li class="moreFood__slide"><a href=""><img :src="recipe.questionImg" alt=""></a></li>
-        
           </ul>
         </div>
       </section>
@@ -38,87 +37,17 @@
   </div>
 </template>
 <script setup>
-import { ref } from 'vue';
-import questionImg1 from '@/assets/images/recipelist/meat-1.png';
-import questionImg2 from '@/assets/images/recipelist/meat-2.png';
-import questionImg3 from '@/assets/images/recipelist/meat-3.png';
-import questionImg4 from '@/assets/images/recipelist/meat-4.png';
-import questionImg5 from '@/assets/images/recipelist/meat-5.png';
-import questionImg6 from '@/assets/images/recipelist/meat-6.png';
-import questionImg7 from '@/assets/images/recipelist/seafood-1.png';
-import questionImg8 from '@/assets/images/recipelist/seafood-2.png';
-import questionImg9 from '@/assets/images/recipelist/seafood-3.png';
-import questionImg10 from '@/assets/images/recipelist/seafood-4.png';
-import questionImg11 from '@/assets/images/recipelist/vegetables-1.png';
-import questionImg12 from '@/assets/images/recipelist/vegetables-2.png';
-import questionImg13 from '@/assets/images/recipelist/vegetables-3.png';
-import questionImg14 from '@/assets/images/recipelist/vegetables-4.png';
-import questionImg15 from '@/assets/images/recipelist/vegetables-5.png';
-import questionImg16 from '@/assets/images/recipelist/vegetables-6.png';
-const recipeList = ref([
-  {
-    index: 1,
-    questionImg: questionImg1
-  },
-  {
-    index: 2,
-    questionImg: questionImg2
-  },
-  {
-    index: 3,
-    questionImg: questionImg3
-  },
-  {
-    index: 4,
-    questionImg: questionImg4
-  },
-  {
-    index: 5,
-    questionImg: questionImg5
-  },
-  {
-    index: 6,
-    questionImg: questionImg6
-  },
-   {
-    index: 7,
-    questionImg: questionImg7
-  },
-  {
-    index: 8,
-    questionImg: questionImg8
-  },
-  {
-    index: 9,
-    questionImg: questionImg9
-  },
-  {
-    index: 10,
-    questionImg: questionImg10
-  },
-  {
-    index: 11,
-    questionImg: questionImg11
-  },
-  {
-    index: 12,
-    questionImg: questionImg12
-  },
-  {
-    index: 13,
-    questionImg: questionImg13
-  },
-  {
-    index: 14,
-    questionImg: questionImg14
-  },
-  {
-    index: 15,
-    questionImg: questionImg15
-  },
-  {
-    index: 16,
-    questionImg: questionImg16
-  },
-])
+import { computed } from 'vue';
+
+const result = JSON.parse(sessionStorage.getItem('resultJSON').replace(/\s+/g, ''));
+
+const question1 = result[0];
+const question2 = result[1];
+const resultImg = computed(() => {
+  return require(`@/assets/images/result/result_img${question1}-${question2}.jpg`);
+});
+const resultMobileImg = computed(() => {
+  return require(`@/assets/images/result/result_img${question1}-${question2}m.jpg`);
+});
+console.log('result', result)
 </script>
