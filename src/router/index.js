@@ -22,6 +22,11 @@ const routes = [
     name: 'Result',
     component: () => import('../views/ResultView.vue'),
   },
+  {
+    path: '/recipelist',
+    name: 'Recipelist',
+    component: () => import('../views/RecipeListView.vue'),
+  },
 ];
 
 // 創建路由實例
