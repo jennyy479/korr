@@ -18,7 +18,7 @@
                   alt=""></a></div>
             <div class="questions__btn--next"><a href="#"><img src="@/assets/images/question/question_btn_next.png"
                   alt=""></a></div>
-            <div class="questions__btn--result"><a href="result.html"><img
+            <div class="questions__btn--result"><a href="/result"><img
                   src="@/assets/images/question/question_btn_result.png" alt=""></a></div>
           </div>
         </section>

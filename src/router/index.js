@@ -17,6 +17,11 @@ const routes = [
     name: 'Teach',
     component: () => import('../views/TeachView.vue'),
   },
+  {
+    path: '/result',
+    name: 'Result',
+    component: () => import('../views/ResultView.vue'),
+  },
 ];
 
 // 創建路由實例
